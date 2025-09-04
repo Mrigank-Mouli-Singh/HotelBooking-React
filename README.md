@@ -4,222 +4,160 @@
 
 ---
 
-## Project Summary
+## 📖 Project Summary  
+**HotelBooking** is a modern, responsive hotel booking frontend application that I built using **React, Vite, and TailwindCSS**.  
 
-**HotelBooking** is a modern, responsive hotel booking frontend website built with [React](https://react.dev/), [Vite](https://vitejs.dev/), and [TailwindCSS](https://tailwindcss.com/). This project demonstrates core React concepts (components, context API, hooks), advanced UI/UX with custom components, a mobile-friendly layout, and integration with third-party React libraries. It is designed both as a learning resource and a practical template for static hotel or accommodation websites.
+The goal of this project was to strengthen my fundamentals in **React (components, context API, hooks)**, while applying **real-world UI/UX practices** such as reusable components, state management, and responsive design.  
 
-- **Live Demo:** [https://hotel-booking-arnob.netlify.app](https://hotel-booking-arnob.netlify.app)
+I designed it as both a **learning resource** for developers and a **practical template** that can be extended into a full hotel/accommodation booking system.  
 
----
-
-## Table of Contents
-
-- [Project Summary](#project-summary)
-- [Features](#features)
-- [Tech Stack & Keywords](#tech-stack--keywords)
-- [Project Structure](#project-structure)
-- [Components Overview](#components-overview)
-- [Pages & Routing](#pages--routing)
-- [Functionality Walkthrough](#functionality-walkthrough)
-- [How to Run / Usage Instructions](#how-to-run--usage-instructions)
-- [Learning & Teaching Notes](#learning--teaching-notes)
-- [Code Examples](#code-examples)
-- [Conclusion](#conclusion)
+🔗 **Live Demo:** [Hotel Booking](https://hotel-booking-arnob.netlify.app)  
 
 ---
 
-## Features
-
-- 🏨 **Responsive hotel booking frontend** — fully mobile-ready
-- ⚡ **Vite-powered** for fast development and hot-reloading
-- 🎨 **TailwindCSS styling** for utility-first, customizable design
-- 🔄 **React Context API** for state management (room filtering, selection, etc.)
-- 🧩 **Reusable React components** like Room Cards, Booking Form, Dropdowns
-- 📅 **React Date Picker** for check-in/check-out selection
-- 🚀 **Swiper Slider** for hero images
-- 🔗 **React Router** for SPA navigation and room details
-- 🌀 **Spinner** loading indicator for data fetch simulation
-- ⬆️ **Scroll to Top** on route changes
-- 🛠️ **Example hotel data**, facilities, and images
-- ☑️ **Hotel rules** and details on each room page
+## 📌 Table of Contents  
+- [Project Summary](#-project-summary)  
+- [Features](#-features)  
+- [Tech Stack & Keywords](#-tech-stack--keywords)  
+- [Project Structure](#-project-structure)  
+- [Components Overview](#-components-overview)  
+- [Pages & Routing](#-pages--routing)  
+- [Functionality Walkthrough](#-functionality-walkthrough)  
+- [How to Run / Usage Instructions](#-how-to-run--usage-instructions)  
+- [Learning Notes](#-learning-notes)  
+- [Code Examples](#-code-examples)  
+- [Conclusion](#-conclusion)  
 
 ---
 
-## Tech Stack & Keywords
-
-- **React**, **Vite**, **React Router DOM**, **TailwindCSS**, **PostCSS**, **Autoprefixer**
-- **Context API**, **Hooks**, **Reusable Components**
-- **React Date Picker**, **Swiper**, **Spinners**
-- **Responsive Design**, **SVG/Images**, **Single Page Application (SPA)**
-- **Frontend Only** (No backend integration)
+## ✨ Features  
+- 🏨 Responsive hotel booking frontend — fully mobile-ready  
+- ⚡ Blazing-fast development experience with **Vite**  
+- 🎨 Utility-first design with **TailwindCSS**  
+- 🔄 **React Context API** for state management (room filtering, booking flow)  
+- 🧩 Reusable components (room cards, booking form, dropdowns, etc.)  
+- 📅 Date pickers for check-in / check-out  
+- 🚀 Image sliders with **Swiper.js**  
+- 🔗 Single Page Application (SPA) navigation with **React Router**  
+- 🌀 Loading spinner simulation for data fetching  
+- ⬆️ Scroll-to-top on route changes  
+- 🛠️ Example hotel data, facilities, and room details  
+- ☑️ Hotel rules and booking conditions on room details page  
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack & Keywords  
+- **React**, **Vite**, **React Router DOM**  
+- **TailwindCSS**, **PostCSS**, **Autoprefixer**  
+- **Context API**, **Hooks** (useState, useContext, useParams)  
+- **React Date Picker**, **Swiper**, **Spinners**  
+- **Responsive Design**, **SPA Architecture**  
 
-```
-HotelBooking--TailwindCSS-Fundamental-Project-3/
-├── public/
-│   └── favicon, static assets...
+---
+
+## 📂 Project Structure  
+HotelBooking/
+├── public/ # Favicon & static assets
 ├── src/
-│   ├── assets/           # Images & SVGs
-│   ├── components/       # UI Components (Header, Footer, Rooms, etc.)
-│   ├── constants/        # Static data (e.g., hotel rules)
-│   ├── context/          # React Context (RoomContext.js)
-│   ├── pages/            # Page-level components (Home, RoomDetails)
-│   ├── utils/            # Utility functions (ScrollToTop)
-│   ├── App.jsx           # Main app component, routing
-│   ├── main.jsx          # App entry point
-│   └── index.css         # TailwindCSS directives
+│ ├── assets/ # Images & SVGs
+│ ├── components/ # UI Components
+│ ├── constants/ # Static hotel data
+│ ├── context/ # React Context (RoomContext.js)
+│ ├── pages/ # Page-level components
+│ ├── utils/ # Utility helpers (ScrollToTop)
+│ ├── App.jsx # Main App component + routing
+│ ├── main.jsx # App entry point
+│ └── index.css # TailwindCSS directives
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
 ├── postcss.config.js
 └── README.md
-```
+
+markdown
+Copy code
 
 ---
 
-## Components Overview
-
-- **Header:** Navigation bar with logo and links
-- **Footer:** Footer with copyright
-- **HeroSlider:** Swiper slider with hotel images (homepage)
-- **BookForm:** Main booking form for guests (date pickers, dropdowns)
-- **Rooms:** List/grid of available rooms (with spinner effect)
-- **Room:** Card for an individual room
-- **RoomDetails:** Page for detailed info about a single room (facilities, price, rules)
-- **AdultsDropdown, KidsDropdown:** Select number of guests
-- **CheckIn, CheckOut:** Date pickers for reservation
-- **PageNotFound:** 404 fallback
-- **ScrollToTop:** Utility component to scroll on navigation
-
----
-
-## Pages & Routing
-
-- `/` **Home:** Hero slider, booking form, room listing
-- `/room/:id` **Room Details:** Details for a selected room (from Rooms grid)
-- `*` **PageNotFound:** Handles all unmatched routes
-
-Routing is implemented via `react-router-dom` in `src/App.jsx`.
+## 🧩 Components Overview  
+- **Header** – Navigation bar with logo & links  
+- **Footer** – App footer  
+- **HeroSlider** – Swiper slider for hotel images  
+- **BookForm** – Main booking form (dates, guests)  
+- **Rooms** – Grid of available rooms  
+- **Room** – Individual room card component  
+- **RoomDetails** – Full details of selected room  
+- **Dropdowns** – AdultsDropdown, KidsDropdown  
+- **CheckIn / CheckOut** – Date pickers  
+- **PageNotFound** – 404 fallback  
+- **ScrollToTop** – Utility to handle route changes  
 
 ---
 
-## Functionality Walkthrough
+## 🌐 Pages & Routing  
+- `/` – Homepage: hero slider, booking form, room listing  
+- `/room/:id` – Room details page  
+- `*` – PageNotFound  
 
-### Homepage (`/`)
-- **HeroSlider:** Engaging slider with hotel images.
-- **BookForm:** Users select check-in, check-out dates, number of adults/kids. (State managed by context)
-- **Rooms Grid:** Dynamically lists all rooms pulled from static data. Clicking a room navigates to its details.
-
-### Room Details (`/room/:id`)
-- Fetches room info by ID.
-- Shows:
-  - **Room images, name, description**
-  - **Facilities grid** (icons, features)
-  - **Reservation block** (right column) — allows user to select dates/guests and see price.
-  - **Hotel Rules** (list with icons)
-- All state (selected room, guest counts, dates) handled using React context/hooks.
-
-### Spinner Loading
-- When room data is "loading", a full-screen spinner overlay is shown using `spinners-react`.
-
-### Responsive/Mobile
-- Layout adapts for different screen sizes using Tailwind's utility classes.
-- Mobile navigation, grid stacking, and component sizes adjust accordingly.
+Routing handled via **react-router-dom** in `App.jsx`.  
 
 ---
 
-## How to Run / Usage Instructions
+## 🎮 Functionality Walkthrough  
+### Homepage (`/`)  
+- HeroSlider with hotel images  
+- BookForm: check-in, check-out, guests (state via context)  
+- Rooms Grid: dynamic listing of rooms  
 
-### 1. **Clone the Repository**
+### Room Details (`/room/:id`)  
+- Room images, description, facilities, and price  
+- Booking section (with guest/date selectors)  
+- Hotel rules and policies  
+
+### Spinner Loading  
+- Full-screen spinner when data is “loading”  
+
+### Responsive Design  
+- Mobile-first approach with TailwindCSS utility classes  
+- Adaptive layouts for small and large screens  
+
+---
+
+## ▶️ How to Run / Usage Instructions  
+
+1. **Clone the Repository**
 ```bash
-git clone https://github.com/arnobt78/HotelBooking--TailwindCSS-Fundamental-Project-3.git
-cd HotelBooking--TailwindCSS-Fundamental-Project-3
-```
+git clone https://github.com/Mrigank-Mouli-Singh/HotelBooking-React.git
+cd HotelBooking-React
+Install Dependencies
 
----
-
-### 2. **Install NodeJS**
-- Download and install from [nodejs.org](https://nodejs.org/en/)
-
----
-
-### 3. **Install Project Dependencies**
-```bash
+bash
+Copy code
 npm install
-```
+Run the Development Server
 
----
-
-### 4. **(Optional) Create your own Vite + TailwindCSS React Project**
-
-```bash
-npm create vite@latest my-project -- --template react
-cd my-project
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-Edit `tailwind.config.js`:
-```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: { extend: {} },
-  plugins: [],
-}
-```
-Add the following to `src/index.css`:
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
----
-
-### 5. **Run the Project Locally**
-```bash
+bash
+Copy code
 npm run dev
-```
-- Open your browser at: [http://localhost:5173/](http://localhost:5173/)
+Open: http://localhost:5173
 
----
+📚 Learning Notes
+Practiced Context API for global state management.
 
-### 6. **Project Dependencies Used**
-```bash
-npm create vite
-npm add -D react-icons
-npm add -D react-router-dom
-npm add -D react-datepicker
-npm add -D @headlessui/react
-npm add -D spinners-react
-npm add -D swiper
-npm add -D vite-plugin-svgr
-npm add -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
----
+Built reusable UI components to encourage modular design.
 
-## Learning & Teaching Notes
+Used TailwindCSS for rapid styling without CSS files.
 
-- **React Context API** is used to manage state globally (room filters, room selection, etc.).
-- **Hooks** (`useState`, `useContext`, `useParams`) are leveraged throughout to drive interactivity.
-- **TailwindCSS** enables quick UI development with utility classes; no traditional CSS files are needed.
-- **Component Reusability:** All UI blocks (dropdowns, forms, cards) are reusable and composable.
-- **Router Design:** Routing is declarative and supports dynamic parameters (`/room/:id`).
-- **Third-Party Libraries:** Enhance user experience (date picker, spinner, slider, icons).
-- **Deployment:** Easily deployable to Netlify or Vercel as a static site.
+Learned declarative routing and dynamic params with React Router.
 
----
+Explored third-party libraries like date pickers, spinners, and sliders.
 
-## Code Examples
+Gained experience in deploying React + Vite apps to Netlify.
 
-### App Routing (`src/App.jsx`)
-```jsx
+🧾 Code Examples
+App Routing (src/App.jsx)
+jsx
+Copy code
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Footer, Header, PageNotFound } from './components';
 import { Home, RoomDetails } from './pages';
@@ -237,18 +175,18 @@ const App = () => (
     </BrowserRouter>
   </main>
 );
-export default App;
-```
----
 
-### Room Listing (`src/components/Rooms.jsx`)
-```jsx
+export default App;
+Rooms Component (src/components/Rooms.jsx)
+jsx
+Copy code
 import { useRoomContext } from '../context/RoomContext';
 import { SpinnerDotted } from 'spinners-react';
 import { Room } from '.';
 
 const Rooms = () => {
   const { rooms, loading } = useRoomContext();
+
   return (
     <section className='py-24'>
       {loading && (
@@ -268,31 +206,17 @@ const Rooms = () => {
     </section>
   );
 };
+
 export default Rooms;
-```
----
 
-### Booking Form Snippet (`src/components/BookForm.jsx`)
-```jsx
-import { CheckIn, CheckOut, AdultsDropdown, KidsDropdown } from '.';
+✅ Conclusion
+This project demonstrates how to combine React, Vite, and TailwindCSS to build a clean, scalable, and responsive frontend application.
 
-const BookForm = () => (
-  <form>
-    <CheckIn />
-    <CheckOut />
-    <AdultsDropdown />
-    <KidsDropdown />
-    <button type="submit">Book Now</button>
-  </form>
-);
-export default BookForm;
-```
----
+It gave me hands-on practice with state management, routing, and UI libraries, while also serving as a strong foundation for real-world hotel booking or accommodation websites.
 
-## Conclusion
+🚀 Future Enhancements: Integration with backend APIs, authentication, and real payment flows.
 
-This project is a comprehensive example of modern frontend development, combining the power of React, TailwindCSS, and Vite for rapid, scalable, and beautiful web applications. It is ideal for learning, teaching, or as a starter template for your own hotel or resort web apps.
-
+✨ Built with ❤️ and React by Mrigank Mouli Singh
 ---
 
 ## Happy Coding! 🚀
