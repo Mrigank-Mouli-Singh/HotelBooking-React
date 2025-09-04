@@ -218,9 +218,3 @@ It gave me hands-on practice with state management, routing, and UI libraries, w
 
 ✨ Built with ❤️ and React by Mrigank Mouli Singh
 ---
-
-## Happy Coding! 🚀
-
-Thank you for using and exploring this project!
-
----
