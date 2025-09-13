@@ -56,6 +56,7 @@ I designed it as both a **learning resource** for developers and a **practical t
 ---
 
 ## 📂 Project Structure  
+```
 HotelBooking/
 ├── public/ # Favicon & static assets
 ├── src/
@@ -73,9 +74,7 @@ HotelBooking/
 ├── tailwind.config.js
 ├── postcss.config.js
 └── README.md
-
-markdown
-Copy code
+```
 
 ---
 
@@ -129,17 +128,20 @@ Routing handled via **react-router-dom** in `App.jsx`.
 ```bash
 git clone https://github.com/Mrigank-Mouli-Singh/HotelBooking-React.git
 cd HotelBooking-React
+```
+
 Install Dependencies
 
-bash
-Copy code
+```bash
 npm install
+```
+
 Run the Development Server
 
-bash
-Copy code
+```bash
 npm run dev
 Open: http://localhost:5173
+```
 
 📚 Learning Notes
 Practiced Context API for global state management.
@@ -156,8 +158,7 @@ Gained experience in deploying React + Vite apps to Netlify.
 
 🧾 Code Examples
 App Routing (src/App.jsx)
-jsx
-Copy code
+```jsx
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Footer, Header, PageNotFound } from './components';
 import { Home, RoomDetails } from './pages';
@@ -208,6 +209,7 @@ const Rooms = () => {
 };
 
 export default Rooms;
+```
 
 ✅ Conclusion
 This project demonstrates how to combine React, Vite, and TailwindCSS to build a clean, scalable, and responsive frontend application.
